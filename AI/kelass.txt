@@ -1,0 +1,6 @@
+Open CV
+yolo
+tensorflow
+LabelLMG
+
+tools to be used

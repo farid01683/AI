@@ -1,0 +1,10 @@
+python
+import cv2
+import os
+file = os.listdir()
+file
+for i in file:
+   	img = cv2.imread(i)
+  	img = cv2.resize(img,(400,400), interpolation = cv2.INTER_AREA)
+ 	cv2.imwrite(i,img)
+	print('done', i)

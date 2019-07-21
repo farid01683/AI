@@ -1,0 +1,4 @@
+1. Crop (Done)
+2. Resize (Cv2 use kore)
+3. Grayscale - binary (Cv2)
+4. Hisogram analysis (Cv2)

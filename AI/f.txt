@@ -1,0 +1,5 @@
+1.jupyter notebook,open cv
+2.image crop
+3.image resize
+4.grayscale-binay
+5.histogram analysis

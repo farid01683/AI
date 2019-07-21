@@ -1,0 +1,10 @@
+import cv2
+
+image = cv2.imread('photo.jpeg',cv2.IMREAD_GRAYSCALE) #,cv2.IMREAD_GRAYSCALE just gray color korar jono
+cropped = image[:300,:300] #just image dekhar jono cropped variable nitte hobe na
+cv2.imshow('image',cropped) #just image dekhar jono image ditte hobe cropped er jaygay
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+#webcame theke direct video read kora jay opencv diye, matplotib tao use korte hobe
+#opencv diye obejct detection/face detection 

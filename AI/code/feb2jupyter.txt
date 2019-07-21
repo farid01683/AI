@@ -1,0 +1,31 @@
+import numpy as np
+import cv2
+import os
+
+x = []
+y = []
+
+cat = os.listdir('./cats/')
+dog = os.listdir('./dogs/')
+
+for i in cat:
+    img = cv2.imread('./cats/'+i,0)
+    img = cv2.resize(img,(28,28), interpolation = cv2.INTER_AREA) 
+    img = img.flatten()
+    x.append(img)
+    y.append(0)
+    print(i)
+   
+
+for i in dog:
+    img = cv2.imread('./dogs/'+i,0)
+    img = cv2.resize(img,(28,28), interpolation = cv2.INTER_AREA) 
+    img = img.flatten()
+    x.append(img)
+    y.append(1)
+    print(i)
+
+len(x)
+
+np.save('ann_x.npy',x)
+np.save('ann_y.npy',y)

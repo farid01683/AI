@@ -1,0 +1,48 @@
+import os 
+import cv2
+import numpy as np
+from PIL import Image
+import random
+
+
+
+
+cats=os.listdir('./aug/')
+
+
+angles = [-30,-20,-15,-10,10,15,20,30]
+
+
+
+
+
+try:
+    os.mkdir('tilt')
+except:
+    pass
+for i in cats:
+    img = Image.open('./cats/'+i)
+    img= img.rotate(random.choice(angles))
+    img.save('./tilt/'+i)
+
+
+try:
+    os.mkdir('blur')
+except:
+    pass
+for i in cats:
+    img = cv2.imread('./cats/'+i)
+    img= cv2.blur(img,(5,5))
+    cv2.imwrite('./blur/'+i,img)
+
+
+
+
+try:
+    os.mkdir('flip')
+except:
+    pass
+for i in cats:
+    img = cv2.imread('./cats/'+i)
+    img= cv2.flip(img,1)
+    cv2.imwrite('./flip/'+i,img)
