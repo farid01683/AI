@@ -1,0 +1,24 @@
+import pandas as pd
+import numpy as py
+from sklearn.model_selection import train_test_split
+
+from sklearn.preprocessing import StandardScaler 
+from sklearn.linear_model import LogisticRegression
+
+data = pd.read_csv("Social_Network_Ads.csv")
+
+x = data.iloc[:,[2,3]].values
+y = data.iloc[:,4].values
+
+x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2)
+
+classifier = LogisticRegression()
+sc = StandardScaler()
+
+x_train = sc.fit_transform(x_train)
+x_test = sc.fit_transform(x_test)
+print (x_train)
+
+classifier.fit(x_train,y_train)
+
+classifier.predict(x_test)
